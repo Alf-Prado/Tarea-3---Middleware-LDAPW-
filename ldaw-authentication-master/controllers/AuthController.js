@@ -14,14 +14,13 @@ exports.register = (req, res) => {
 }
 
 exports.store = (req, res) => {
-  console.log(req.body);
   // Identifica si hubieron errores en el request
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     req.flash('errors', errors.array());
     return res.redirect('back');
   }
-  userModel.create({ name: req.body.name, email: req.body.email, password: req.body.password })
+  userModel.create({ name: req.body.name, email: req.body.email, password: req.body.password, role: req.body.role })
     .then((data) => {
       return res.redirect('/login');
     })

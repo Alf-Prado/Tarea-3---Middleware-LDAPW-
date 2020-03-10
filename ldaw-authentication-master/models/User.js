@@ -32,5 +32,11 @@ exports.create = (user) => {
   // Encripta la contraseña
   pass = bcrypt.hashSync(pass, 10);
   return knex('users')
-    .insert({ name: user.name, email: user.email, password: pass });
+    .insert({ name: user.name, email: user.email, password: pass, role: user.role });
+}
+
+exports.showAll = () => {
+  return knex
+    .from('users')
+    .select('*');
 }
