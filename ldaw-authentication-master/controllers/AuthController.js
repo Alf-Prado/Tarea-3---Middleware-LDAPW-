@@ -14,6 +14,7 @@ exports.register = (req, res) => {
 }
 
 exports.store = (req, res) => {
+  console.log(req.body);
   // Identifica si hubieron errores en el request
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

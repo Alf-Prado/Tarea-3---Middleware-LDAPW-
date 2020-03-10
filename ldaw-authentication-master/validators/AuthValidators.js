@@ -8,6 +8,8 @@ exports.store = [
   check('name').notEmpty(),
   // Revisa que el correo sea un mail
   check('email').isEmail(),
+  //Revisa que el rol no este vacío
+  check('role').notEmpty(),
   // Revisa que el password este definido
   check('password').notEmpty(),
   // Revisa que el password sea el mismo
