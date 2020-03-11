@@ -12,7 +12,7 @@ exports.adminAuth = (req, res, next) => {
   if (req.user.role == 'Admin') {
     next();
   } else {
-    res.status(403).json({ msg: 'You do not have the permission to view this resource' });
+    res.status(403).json({ msg: 'Error 403: You do not have the permission to view this resource!' });
   }
 }
 
@@ -20,6 +20,6 @@ exports.userAuth = (req, res, next) => {
   if (req.user.role == 'Admin' || req.user.role == 'User' ) {
     next();
   } else {
-    res.status(403).json({ msg: 'You do not have the permission to view this resource' });
+    res.status(403).json({ msg: 'Error 403: You do not have the permission to view this resource!' });
   }
 }
