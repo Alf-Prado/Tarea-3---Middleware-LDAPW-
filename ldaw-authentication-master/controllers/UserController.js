@@ -5,9 +5,9 @@ exports.index = (req, res) => {
     let user = req.user;
     UserModel.showAll()
     .then((data) => {
-      // Guardamos los productos en una variable
+      // Se guardan los usuarios
       let users = data;
-      // Enviamos los datos a la vista
+      // Se envía la información
         res.render('admin/users', {user: user, users: users});
     });
   }
